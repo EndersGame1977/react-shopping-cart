@@ -6,7 +6,7 @@ import Item from "./ShoppingCartItem";
 // Contexts
 import { CartContext } from "../contexts/CartContext";
 
-const ShoppingCart = props => {
+const ShoppingCart = () => {
   const { cart } = useContext(CartContext);
   const getCartTotal = () => {
     return cart
@@ -21,7 +21,6 @@ const ShoppingCart = props => {
       {cart.map(item => (
         <Item key={item.id} {...item} />
       ))}
-
       <div className="shopping-cart__checkout">
         <p>Total: ${getCartTotal()}</p>
         <button>Checkout</button>
